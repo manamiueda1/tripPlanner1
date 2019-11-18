@@ -1,21 +1,22 @@
-// const mapboxgl = require("mapbox-gl");
+const mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
+const buildMark = require('./marker');
 
-// mapboxgl.accessToken = "YOUR API TOKEN HERE";
+mapboxgl.accessToken = "pk.eyJ1IjoibWFuYW1pdWVkYSIsImEiOiJjazE2bGhweXIxNndrM2RvM3ZlcjJ2OWN0In0.BFH1qaAMg_hBCLErNqC3QQ";
 
-// const map = new mapboxgl.Map({
-//   container: "map",
-//   center: [-74.009, 40.705], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago
-//   zoom: 12, // starting zoom
-//   style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
-// });
-
-var mapboxgl = require("mapbox-gl/dist/mapbox-gl.js");
-
-mapboxgl.accessToken =
-  "pk.eyJ1IjoibWFuYW1pdWVkYSIsImEiOiJjazE2bGhweXIxNndrM2RvM3ZlcjJ2OWN0In0.BFH1qaAMg_hBCLErNqC3QQ";
-var map = new mapboxgl.Map({
-  center: [-74.009, 40.705], // FullStack NY coordinates; alternatively, use [-87.6354, 41.8885] for Chicago
-  zoom: 12, // starting zoom
-  container: "map",
+let map = new mapboxgl.Map({
+  center: [-74.009, 40.705],
+  zoom: 12,
+  container: "manami",
   style: "mapbox://styles/mapbox/streets-v11"
 });
+
+const fsa = 'Activity';
+const coord = [-74.009, 40.705];
+const cop = 'Food';
+const coord1 = [-74.0000092,40.7388958];
+const whit = 'Hotel';
+const coord2 = [-73.9757414,40.7627161];
+
+const FSA = buildMark(fsa, coord, map);
+const Coppelia = buildMark(cop, coord1, map);
+const whitby = buildMark(whit, coord2, map);
