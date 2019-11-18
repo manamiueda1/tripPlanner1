@@ -10,5 +10,14 @@ body {
 
 #manami {
   height: 100vh;
-  width: 100vw;
+  width: 80%;
+}
+
+.side-bar {
+  display: flex;
+  height: 100vh;
+  width: 100px;
+  background-color: grey;
+  position: absolute;
+  z-index: 2;
 }
